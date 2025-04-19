@@ -65,9 +65,10 @@ end
 local _3cbs_3e = replace_keycodes("<bs>")
 local _3ccr_3e = replace_keycodes("<cr>")
 local _3cesc_3e = replace_keycodes("<esc>")
+local _3center_3e = replace_keycodes("<enter>")
 local function get_input()
   local ok_3f, ch = pcall(vim.fn.getcharstr)
-  if (ok_3f and (ch ~= _3cesc_3e)) then
+  if (ok_3f and (ch ~= _3cesc_3e and ch ~= _3center_3e)) then
     return ch
   else
     return nil
